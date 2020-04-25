@@ -39,7 +39,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/configserver?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
-    password:
+    password: '!QAZ2wsx'
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -93,7 +93,7 @@ jhipster:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
         base64-secret: MjJiYmUyOGM5OTQwNmY2M2FkMmFhNWVmNjFiMzFlNDYxZWU5NTc5YjM1MzQ1YzdkNzExMDcwNDFiZmIzYmViZGYwN2Y5Nzc5MDc4YTRiNzMxYTJlYjI4MzM1ZjllNzc5NTJmZTI3OWJjYzcxN2YzNWQwMTg4ZTRlMDdlMzk4Njc=
         # Token is valid 24 hours
-        token-validity-in-seconds: 86400
+        token-validity-in-seconds: 86400000 # 1000 days
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
     base-url: http://127.0.0.1:8080
