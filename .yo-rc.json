@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "tech.meliora.configserver"
+    },
+    "jhipsterVersion": "6.8.0",
+    "applicationType": "monolith",
+    "baseName": "configserver",
+    "packageName": "tech.meliora.configserver",
+    "packageFolder": "tech/meliora/configserver",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "no",
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjJiYmUyOGM5OTQwNmY2M2FkMmFhNWVmNjFiMzFlNDYxZWU5NTc5YjM1MzQ1YzdkNzExMDcwNDFiZmIzYmViZGYwN2Y5Nzc5MDc4YTRiNzMxYTJlYjI4MzM1ZjllNzc5NTJmZTI3OWJjYzcxN2YzNWQwMTg4ZTRlMDdlMzk4Njc=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "flatly",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1587837759939,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
