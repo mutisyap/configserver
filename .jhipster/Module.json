@@ -1,0 +1,36 @@
+{
+    "name": "Module",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "application",
+            "otherEntityRelationshipName": "module",
+            "relationshipName": "application",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200425182000",
+    "entityTableName": "tbl_modules",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
