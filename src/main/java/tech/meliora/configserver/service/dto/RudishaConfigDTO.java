@@ -1,5 +1,7 @@
 package tech.meliora.configserver.service.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -7,15 +9,15 @@ import java.util.Objects;
 /**
  * A DTO for the {@link tech.meliora.configserver.domain.RudishaConfig} entity.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RudishaConfigDTO implements Serializable {
-    
+
     private Long id;
 
     @NotNull
     private String key;
 
     @NotNull
-    @Size(max = 7500)
     private String value;
 
     private String digest;
@@ -26,7 +28,7 @@ public class RudishaConfigDTO implements Serializable {
     private Long profileId;
 
     private String profileName;
-    
+
     public Long getId() {
         return id;
     }

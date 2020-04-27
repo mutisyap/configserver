@@ -1,6 +1,9 @@
 package tech.meliora.configserver.web.rest;
 
+import org.springframework.http.HttpStatus;
 import tech.meliora.configserver.service.RudishaConfigService;
+import tech.meliora.configserver.service.exception.DataIntegrityViolationException;
+import tech.meliora.configserver.service.exception.EntityNotFoundException;
 import tech.meliora.configserver.web.rest.errors.BadRequestAlertException;
 import tech.meliora.configserver.service.dto.RudishaConfigDTO;
 
@@ -113,5 +116,35 @@ public class RudishaConfigResource {
         log.debug("REST request to delete RudishaConfig : {}", id);
         rudishaConfigService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+    }
+
+    @GetMapping("/configs/{applicationName}/{moduleName}/{profile}")
+    public List<RudishaConfigDTO> getRudishaConfigs(@PathVariable String applicationName, @PathVariable String moduleName, @PathVariable String profile) throws DataIntegrityViolationException, EntityNotFoundException {
+        log.debug("REST request to get configs for application : {}, module : {}, profile : {}", applicationName, moduleName, profile);
+
+        // get application
+        return rudishaConfigService.getConfigs(applicationName, moduleName, profile);
+        /*try {
+            return ResponseEntity.ok(rudishaConfigService.getConfigs(applicationName, moduleName, profile));
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }*/
+    }
+
+    @GetMapping("/configs/open/{applicationName}/{moduleName}/{profile}")
+    public List<RudishaConfigDTO> getRudishaConfigsOpen(@PathVariable String applicationName, @PathVariable String moduleName, @PathVariable String profile) throws DataIntegrityViolationException, EntityNotFoundException {
+        log.debug("REST request to get configs for application : {}, module : {}, profile : {}", applicationName, moduleName, profile);
+
+        // get application
+        return rudishaConfigService.getConfigs(applicationName, moduleName, profile);
+        /*try {
+            return ResponseEntity.ok(rudishaConfigService.getConfigs(applicationName, moduleName, profile));
+        } catch (EntityNotFoundException e) {
+            return ResponseEntity.notFound().build();
+        } catch (DataIntegrityViolationException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }*/
     }
 }

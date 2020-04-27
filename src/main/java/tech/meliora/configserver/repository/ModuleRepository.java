@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface ModuleRepository extends JpaRepository<Module, Long> {
+    Module findByNameAndApplicationId(String name, Long appId);
 }

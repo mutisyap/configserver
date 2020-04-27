@@ -21,7 +21,7 @@ export class RudishaConfigUpdateComponent implements OnInit {
   editForm = this.fb.group({
     id: [],
     key: [null, [Validators.required]],
-    value: [null, [Validators.required, Validators.maxLength(7500)]],
+    value: [null, [Validators.required, Validators.maxLength(75000)]],
     digest: [],
     lastUpdatedOn: [],
     profileId: []

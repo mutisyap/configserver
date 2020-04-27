@@ -26,8 +26,7 @@ public class RudishaConfig implements Serializable {
     private String key;
 
     @NotNull
-    @Size(max = 7500)
-    @Column(name = "value", length = 7500, nullable = false)
+    @Column(name = "value", nullable = false)
     private String value;
 
     @Column(name = "digest")
